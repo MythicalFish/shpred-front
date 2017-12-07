@@ -1,13 +1,13 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Video from './pages/Video'
+import HomePage from './pages/HomePage'
+import VideoPage from './pages/VideoPage'
 
 const App = () => (
   <main>
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/:id" component={Video} />
+      <Route exact path="/" component={HomePage} />
+      <Route path="/:id" component={VideoPage} />
     </Switch>
   </main>
 )

@@ -1,7 +1,8 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux'
 import { fromJS } from 'immutable'
 import createSagaMiddleware from 'redux-saga'
-import home from './containers/Home/reducer'
+import Videos from './containers/VideosContainer/reducer'
+import VideosSagas from './containers/VideosContainer/sagas'
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -10,14 +11,16 @@ export default function configureStore(initialState) {
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
   const rootReducer = combineReducers({
-    home
+    Videos
   })
 
   const middlewares = [sagaMiddleware]
   const enhancers = [applyMiddleware(...middlewares)]
-  return createStore(
+  const store = createStore(
     rootReducer,
     fromJS(initialState),
     composeEnhancers(...enhancers)
   )
+  sagaMiddleware.run(VideosSagas)
+  return store
 }

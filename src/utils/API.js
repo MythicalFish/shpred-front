@@ -45,7 +45,7 @@ export function destroy(path, params) {
 //
 
 const requestURL = opts => {
-  let url = `${process.env.API_URL}/${opts.path}`
+  let url = `${process.env.REACT_APP_API_URL}/${opts.path}`
   if (opts.params) {
     url = `${url}?${toQueryString(opts.params)}`
   }
