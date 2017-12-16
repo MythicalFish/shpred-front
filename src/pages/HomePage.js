@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import VideosContainer from '../containers/VideosContainer'
-import Header from '../components/Header'
-import { Link } from 'react-router-dom'
+import AppLayout from '../components/AppLayout'
+import { Row, Col } from 'antd'
+import Thumbnail from '../components/Thumbnail'
 
 class HomePage extends Component {
   static propTypes = {
@@ -11,12 +12,15 @@ class HomePage extends Component {
   render() {
     const { videos } = this.props
     return (
-      <div>
-        <Header />
-        {videos.map(video => (
-          <div key={video.get('id')}>{video.get('title')}</div>
-        ))}
-      </div>
+      <AppLayout>
+        <Row gutter={8}>
+          {videos.map(video => (
+            <Col span={6} key={video}>
+              <Thumbnail video={video} />
+            </Col>
+          ))}
+        </Row>
+      </AppLayout>
     )
   }
 }
