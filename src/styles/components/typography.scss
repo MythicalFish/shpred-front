@@ -1,0 +1,86 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,300');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+$font-family: 'Source Sans', sans-serif;
+$line-height-1: 1;
+$line-height-2: 1.125;
+$line-height-3: 1.25;
+$line-height-4: 1.5;
+$letter-spacing: 1;
+
+$heading-font-family: 'Montserrat', sans-serif;
+$heading-font-weight: bold;
+$heading-line-height: 1.25;
+
+$caps-letter-spacing: .2em;
+$bold-font-weight: bold;
+$monospace-font-family: 'Source Code Pro', Consolas, monospace;
+$h1: 2.2rem;
+$h2: 1.5rem;
+$h3: 1.25rem;
+$h4: 1rem;
+$h5: .875rem;
+$h6: .75rem;
+
+body {
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $gray-dark;
+}
+h1, h2, h3, h4 {
+  color: $gray-dark;
+  text-transform: uppercase;
+}
+a, a * {
+  text-decoration: none;
+}
+* {
+  outline: none;
+}
+.upcase {
+  text-transform: uppercase;
+}
+.hfont {
+  font-family: $heading-font-family;
+}
+.light {
+  font-weight: 300;
+}
+img {
+  max-width: 100%;
+}
+@media #{$breakpoint-sm} {
+  .sm-center {
+    text-align: center!important;
+  }
+  .sm-left-align {
+    text-align: left;
+  }
+  .sm-right-align {
+    text-align: right
+  }
+}
+@media #{$breakpoint-md} {
+  .md-center {
+    text-align: center!important;
+  }
+  .md-left-align {
+    text-align: left;
+  }
+  .md-right-align {
+    text-align: right;
+  }
+}
+@media #{$breakpoint-lg} {
+  .lg-center {
+    text-align: center!important;
+  }
+  .lg-left-align {
+    text-align: left;
+  }
+  .lg-right-align {
+    text-align: right;
+  }
+}

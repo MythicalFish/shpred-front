@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+.container { 
+  width: 100%; 
+  max-width: $xl;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container-narrow {
+  @extend .container;
+  max-width: 800px;
+}
+.container-narrower {
+  @extend .container;
+  max-width: 600px;
+}
+.items-middle {
+  @extend .items-center;
+  @extend .justify-center;
+}
+@media #{$breakpoint-sm} {
+  .sm-order-last {
+    order: 99999;
+  }
+}
+@media #{$breakpoint-md} {
+  .md-order-last {
+    order: 99999;
+  }
+}
+@media #{$breakpoint-lg} {
+  .lg-order-last {
+    order: 99999;
+  }
+}

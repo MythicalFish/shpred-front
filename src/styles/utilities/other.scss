@@ -1,0 +1,14 @@
+@media #{$breakpoint-xl} {
+  .xl-p1 {
+    padding: $space-1;
+  }
+  .xl-p2 {
+    padding: $space-2;
+  }
+  .xl-p3 {
+    padding: $space-3;
+  }
+  .xl-p4 {
+    padding: $space-4;
+  }
+}

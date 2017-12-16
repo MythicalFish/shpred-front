@@ -1,0 +1,40 @@
+@mixin borders($namespace) {
+
+  $b1: 1px solid $gray-lighterer;
+
+  .#{$namespace}b0 { border: 0!important;}
+  .#{$namespace}b1 { border: $b1!important;}
+
+  .#{$namespace}bt0 { border-top: 0!important;}
+  .#{$namespace}bt1 { border-top: $b1!important;}
+
+  .#{$namespace}br0 { border-right: 0!important;}
+  .#{$namespace}br1 { border-right: $b1!important;}
+
+  .#{$namespace}bb0 { border-bottom: 0!important;}
+  .#{$namespace}bb1 { border-bottom: $b1!important;}
+
+  .#{$namespace}bl0 { border-left: 0!important;}
+  .#{$namespace}bl1 { border-left: $b1!important;}
+
+  .#{$namespace}bx0 { border-left: 0;   border-right: 0!important;}
+  .#{$namespace}bx1 { border-left: $b1!important; border-right: $b1!important;}
+}
+
+@include borders('');
+
+@media #{$breakpoint-sm} {
+  @include borders('sm-');
+}
+
+@media #{$breakpoint-md} {
+  @include borders('md-');
+}
+
+@media #{$breakpoint-lg} {
+  @include borders('lg-');
+}
+
+@media #{$breakpoint-xl} {
+  @include borders('xl-');
+}

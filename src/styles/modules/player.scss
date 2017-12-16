@@ -1,0 +1,68 @@
+#player {
+  width: 100%;
+  min-height: 200px;
+  .vjs-big-play-button, .vjs-button {
+    display: none;
+  }
+  .vjs-progress-control {
+    background-color: rgba(0,0,0,0.6);
+    .vjs-progress-holder {
+      margin: 0 1.5em;
+      .vjs-load-progress {
+        background: rgb(255,225,0);
+        background: -moz-linear-gradient(left,  rgba(255,225,0,1) 0%, rgba(89,255,0,1) 100%);
+        background: -webkit-linear-gradient(left,  rgba(255,225,0,1) 0%,rgba(89,255,0,1) 100%);
+        background: linear-gradient(to right,  rgba(255,225,0,1) 0%,rgba(89,255,0,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe100', endColorstr='#59ff00',GradientType=1 );
+
+      }
+      .vjs-play-progress {
+        background: rgb(0,17,255);
+        background: -moz-linear-gradient(left,  rgba(0,17,255,1) 0%, rgba(0,212,255,1) 100%);
+        background: -webkit-linear-gradient(left,  rgba(0,17,255,1) 0%,rgba(0,212,255,1) 100%);
+        background: linear-gradient(to right,  rgba(0,17,255,1) 0%,rgba(0,212,255,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0011ff', endColorstr='#00d4ff',GradientType=1 );
+      }
+    }
+  }
+  .vjs-time-control {
+    background: $black;
+  }
+  .vjs-progress-control.vjs-control {
+    background-color: $black;
+  }
+}
+#player-controls {
+  .control {
+    display: block;
+    vertical-align: middle;
+    line-height: 1;
+    background: transparent;
+    color: inherit;
+    font-size: inherit;
+    border: 0;
+    padding: 0;
+    font-size: $h2;
+  }
+  .btn {
+    padding: $space-1 $space-2;
+  }
+  .btn.active {
+    background: $gray-darker;
+    color: $lime;
+  }
+}
+#video {
+  position: relative;
+}
+#video-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: $white;
+  text-shadow: -2px 2px 0 rgba(0,0,0,0.6);
+  z-index: 5;
+  font-size: 25px;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+}
