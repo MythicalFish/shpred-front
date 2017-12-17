@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import VideosContainer from '../containers/VideosContainer'
 import Header from '../components/Header'
-import { Link } from 'react-router-dom'
+import Thumbnail from '../components/Thumbnail'
 
 class HomePage extends Component {
   static propTypes = {
@@ -13,9 +13,13 @@ class HomePage extends Component {
     return (
       <div>
         <Header />
-        {videos.map(video => (
-          <div key={video.get('id')}>{video.get('title')}</div>
-        ))}
+        <div className="row">
+          {videos.map(video => (
+            <div key={video} className="col-xs-3">
+              <Thumbnail video={video} />
+            </div>
+          ))}
+        </div>
       </div>
     )
   }
