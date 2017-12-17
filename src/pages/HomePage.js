@@ -13,12 +13,14 @@ class HomePage extends Component {
     return (
       <div>
         <Header />
-        <div className="row">
-          {videos.map(video => (
-            <div key={video} className="col-xs-3">
-              <Thumbnail video={video} />
-            </div>
-          ))}
+        <div className="pa3">
+          <div className="row">
+            {videos.map(video => (
+              <div key={video} className="col-xs-3 pb3">
+                <Thumbnail video={video} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     )
