@@ -1,7 +1,30 @@
 .thumbnail {
-  line-height: 0;
-  @extend .w-100; 
-  & img {
-    @extend .w-100; 
+  @extend .relative; 
+  @extend .db;
+  & .img {
+    line-height: 0;
+    & img {
+      @extend .w-100; 
+    }
+  }
+  & .title, & .meta {
+    @extend .absolute;
+    @extend .bg-black-60;
+    @extend .white;
+  }
+  & .title {
+    @extend .db;
+    @extend .mv0;
+    @extend .fw3;
+    @extend .pa2;
+    @extend .top-0;
+    @extend .left-0;
+    @extend .right-0;
+  }
+  & .meta {
+    @extend .bottom-1;
+    @extend .right-1;
+    @extend .pa1;
+    @extend .f6;
   }
 }

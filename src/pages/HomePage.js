@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import VideosContainer from '../containers/VideosContainer'
-import Header from '../components/AppHeader'
+import Layout from '../components/AppLayout'
 import Thumbnail from '../components/Thumbnail'
 
 class HomePage extends Component {
@@ -11,8 +11,7 @@ class HomePage extends Component {
   render() {
     const { videos } = this.props
     return (
-      <div>
-        <Header />
+      <Layout>
         <div className="pa3">
           <div className="row">
             {videos.map(video => (
@@ -22,7 +21,7 @@ class HomePage extends Component {
             ))}
           </div>
         </div>
-      </div>
+      </Layout>
     )
   }
 }
