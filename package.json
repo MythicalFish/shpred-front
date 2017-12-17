@@ -21,7 +21,8 @@
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
     "tachyons": "MythicalFish/tachyons",
-    "tachyons-cli": "^1.2.0"
+    "tachyons-cli": "^1.2.0",
+    "videojs": "^1.0.0"
   },
   "scripts": {
     "start": "run-p start-postcss start-react",

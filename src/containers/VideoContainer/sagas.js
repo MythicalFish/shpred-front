@@ -7,9 +7,9 @@ import * as actions from './actions'
 // (like react-boilerplate does it)
 
 export default function* watcher() {
-  yield takeLatest('FETCH_VIDEOS', fetchVideos)
+  yield takeLatest('FETCH_VIDEO', fetchVideo)
 }
 
-function* fetchVideos({ params }) {
-  yield sagas.get('videos', params, actions.fetchVideosSuccess)
+function* fetchVideo({ id }) {
+  yield sagas.get(`videos/${id}`, null, actions.fetchVideoSuccess)
 }
