@@ -22,7 +22,7 @@
     "reselect": "^3.0.1",
     "tachyons": "MythicalFish/tachyons",
     "tachyons-cli": "^1.2.0",
-    "videojs": "^1.0.0"
+    "video-react": "^0.9.3"
   },
   "scripts": {
     "start": "run-p start-postcss start-react",
