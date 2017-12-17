@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import VideosContainer from '../containers/VideosContainer'
-import AppLayout from '../components/AppLayout'
-import { Row, Col } from 'antd'
+import Header from '../components/AppHeader'
 import Thumbnail from '../components/Thumbnail'
 
 class HomePage extends Component {
@@ -12,15 +11,16 @@ class HomePage extends Component {
   render() {
     const { videos } = this.props
     return (
-      <AppLayout>
-        <Row gutter={8}>
+      <div>
+        <Header />
+        <div className="row">
           {videos.map(video => (
-            <Col span={6} key={video}>
+            <div key={video} className="col-xs-3">
               <Thumbnail video={video} />
-            </Col>
+            </div>
           ))}
-        </Row>
-      </AppLayout>
+        </div>
+      </div>
     )
   }
 }
