@@ -1,7 +1,6 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux'
 import { fromJS } from 'immutable'
 import createSagaMiddleware from 'redux-saga'
-import VideosReducer from './containers/VideosContainer/reducer'
 import VideoReducer from './containers/VideoContainer/reducer'
 import sagas from './sagas'
 
@@ -12,7 +11,6 @@ export default function configureStore(initialState) {
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
   const rootReducer = combineReducers({
-    Videos: VideosReducer,
     Video: VideoReducer
   })
 

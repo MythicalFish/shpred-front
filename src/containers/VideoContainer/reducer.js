@@ -1,15 +1,18 @@
 import { fromJS } from 'immutable'
 
 const initialState = fromJS({
-  attributes: {}
+  gallery: [],
+  current: {}
 })
 
 export default (state = initialState, action) => {
   const { type, response } = action
   switch (type) {
+    case 'FETCH_VIDEOS_SUCCESS':
+      return state.set('gallery', fromJS(response))
     case 'FETCH_VIDEO_SUCCESS':
-      return state.set('attributes', fromJS(response))
+      return state.set('current', fromJS(response))
     default:
-      return initialState
+      return state
   }
 }

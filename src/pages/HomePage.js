@@ -1,29 +1,19 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import VideosContainer from '../containers/VideosContainer'
+import Container from '../containers/VideoContainer'
 import Layout from '../components/AppLayout'
-import Thumbnail from '../components/Thumbnail'
+import VideoGallery from '../components/VideoGallery'
 
 class HomePage extends Component {
-  static propTypes = {
-    videos: PropTypes.object
+  componentWillMount() {
+    this.props.fetchVideos()
   }
   render() {
-    const { videos } = this.props
     return (
       <Layout>
-        <div className="pa3">
-          <div className="row">
-            {videos.map(video => (
-              <div key={video} className="col-xs-3 pb3">
-                <Thumbnail video={video} />
-              </div>
-            ))}
-          </div>
-        </div>
+        <VideoGallery {...this.props} />
       </Layout>
     )
   }
 }
 
-export default VideosContainer(HomePage)
+export default Container(HomePage)

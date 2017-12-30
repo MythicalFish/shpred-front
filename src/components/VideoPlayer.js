@@ -6,7 +6,7 @@ class VideoPlayer extends Component {
     const { video } = this.props
     if (!video) return null
     return (
-      <Player>
+      <Player autoPlay poster={video.get('poster')}>
         <source src={video.get('media_url')} />
       </Player>
     )

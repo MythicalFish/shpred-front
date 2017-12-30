@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import AppHeader from './AppHeader'
+import AppFooter from './AppFooter'
 
 export default props => {
   return (
-    <div>
+    <Fragment>
       <AppHeader />
-      <div>{props.children}</div>
-    </div>
+      {props.children}
+      <AppFooter />
+    </Fragment>
   )
 }
