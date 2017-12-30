@@ -29,8 +29,10 @@
   }
   & .preview {
     @extend .overlay;
-    background: fuchsia;
-    top: 50%;
-    z-index: 0;
+    width: 100%;
+    pointer-events: none;
+    & * {
+      pointer-events: none;
+    }
   }
 }
