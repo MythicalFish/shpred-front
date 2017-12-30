@@ -5,10 +5,19 @@ import VideoPlayer from '../components/VideoPlayer'
 import VideoGallery from '../components/VideoGallery'
 
 class VideoPage extends Component {
+  state = { id: null }
   componentWillMount() {
-    const id = this.props.match.params.id
-    this.props.fetchVideo(id)
-    if (this.props.videos.size === 0) this.props.fetchVideos()
+    this.initialize(this.props)
+  }
+  componentWillReceiveProps(newProps) {
+    this.initialize(newProps)
+  }
+  initialize({ match: { params: { id } } }) {
+    if (this.state.id !== id) {
+      this.setState({ id })
+      this.props.fetchVideo(id)
+      if (this.props.videos.size === 0) this.props.fetchVideos()
+    }
   }
   render() {
     const { video } = this.props
