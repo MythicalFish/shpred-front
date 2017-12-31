@@ -8,7 +8,7 @@ export default class Thumbnail extends React.PureComponent {
     const { video } = this.props
     return (
       <Link
-        to={`/${video.get('id')}`}
+        to={`/${video.get('slug')}`}
         className="thumbnail hide-child"
         onMouseOver={this.togglePreview}
         onMouseOut={this.togglePreview}
@@ -17,12 +17,10 @@ export default class Thumbnail extends React.PureComponent {
           <img src={video.get('thumbnail_url')} alt={video.get('title')} />
         </div>
         {this.state.showPreview && (
-          <video
-            className="preview"
-            autoPlay
-            loop
-            src={video.get('preview_url')}
-          />
+          <div className="preview">
+            <video autoPlay loop src={video.get('preview_url')} />
+            <div className="preview-shadow" />
+          </div>
         )}
         <h3 className="title child">{video.get('title')}</h3>
         <div className="meta">{video.get('length')}</div>
