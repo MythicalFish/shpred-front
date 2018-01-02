@@ -1,1 +1,1 @@
-scotty --spa --source ./build --bucket shpred --force
+scotty --spa --source ./build --bucket shpred --force --nocdn
