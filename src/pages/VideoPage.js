@@ -34,7 +34,7 @@ class VideoPage extends Component {
   }
   render() {
     return (
-      <Layout>
+      <Layout {...this.props}>
         <VideoPlayer {...this.props} />
         <VideoGallery {...this.props} />
       </Layout>

@@ -5,7 +5,7 @@ import AppFooter from './AppFooter'
 export default props => {
   return (
     <Fragment>
-      <AppHeader />
+      <AppHeader {...props} />
       {props.children}
       <AppFooter />
     </Fragment>

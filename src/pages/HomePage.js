@@ -11,7 +11,7 @@ class HomePage extends Component {
   }
   render() {
     return (
-      <Layout>
+      <Layout {...this.props}>
         <VideoGallery {...this.props} />
       </Layout>
     )
