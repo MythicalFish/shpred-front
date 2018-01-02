@@ -3,14 +3,27 @@ import Container from '../containers/VideoContainer'
 import Layout from '../components/AppLayout'
 import VideoPlayer from '../components/VideoPlayer'
 import VideoGallery from '../components/VideoGallery'
+import { setTitle } from '../utils/misc'
 
 class VideoPage extends Component {
-  state = { id: null }
+  state = { id: null, title: null }
   componentWillMount() {
     this.initialize(this.props)
   }
   componentWillReceiveProps(newProps) {
     this.initialize(newProps)
+  }
+  componentDidUpdate() {
+    this.setTitle()
+  }
+  setTitle() {
+    const { video } = this.props
+    if (!video) return
+    const { title } = video.toObject()
+    if (this.state.title !== title) {
+      setTitle(title)
+      this.setState({ title })
+    }
   }
   initialize({ match: { params: { id } } }) {
     if (this.state.id !== id) {

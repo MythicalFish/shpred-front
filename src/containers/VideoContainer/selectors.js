@@ -11,3 +11,8 @@ export const selectVideo = () =>
   createSelector(selectDomain(), s => {
     return s.get('current')
   })
+
+export const selectResolution = () =>
+  createSelector(selectDomain(), s => {
+    return s.get('selectedResolution')
+  })

@@ -13,3 +13,7 @@ export const fetchVideo = id => {
 export const fetchVideoSuccess = response => {
   return { type: 'FETCH_VIDEO_SUCCESS', response }
 }
+
+export const changeResolution = payload => {
+  return { type: 'CHANGE_RESOLUTION', payload }
+}

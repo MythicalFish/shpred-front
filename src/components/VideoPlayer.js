@@ -2,28 +2,34 @@ import React, { Component } from 'react'
 import { Player } from 'video-react'
 
 class VideoPlayer extends Component {
-  state = { media_url: null, poster_url: null }
-  componentWillMount() {
-    this.initialize(this.props)
-  }
-  componentWillReceiveProps(newProps) {
-    this.initialize(newProps)
-  }
-  initialize({ video }) {
-    if (!video) return
-    const { media_url, poster_url } = video.toObject()
-    if (this.state.media_url !== media_url) {
-      this.setState({ media_url, poster_url })
-      if (this.player) this.player.load()
-    }
+  state = { show: false }
+  componentWillReceiveProps() {
+    this.setState({ show: false })
+    setTimeout(() => {
+      this.setState({ show: true })
+    }, 10)
   }
   handleRef = ref => (this.player = ref)
+  selectedResolution = () => {
+    const { video, selectedResolution: selected } = this.props
+    const resolutions = video.get('resolutions')
+    if (selected && resolutions.includes(selected)) return selected
+    return resolutions.get(0)
+  }
+  mediaURL = format => {
+    const { video } = this.props
+    const res = this.selectedResolution()
+    const path = video.getIn(['media_urls', `${res}`, format])
+    return `${video.get('storage_url')}${path}`
+  }
   render() {
-    const { media_url, poster_url } = this.state
-    if (!media_url) return null
+    const { show } = this.state
+    const { video } = this.props
+    if (!video || !show) return null
     return (
-      <Player autoPlay poster={poster_url} ref={this.handleRef}>
-        <source src={media_url} />
+      <Player autoPlay poster={video.get('poster_url')} ref={this.handleRef}>
+        <source src={this.mediaURL('mp4')} />
+        <source src={this.mediaURL('webm')} />
       </Player>
     )
   }

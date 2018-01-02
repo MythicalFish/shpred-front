@@ -18,7 +18,8 @@ const Container = Page => {
 
   const mapState = createStructuredSelector({
     videos: selectors.selectVideos(),
-    video: selectors.selectVideo()
+    video: selectors.selectVideo(),
+    selectedResolution: selectors.selectResolution()
   })
   return connect(mapState, mapDispatch)(HOC)
 }
