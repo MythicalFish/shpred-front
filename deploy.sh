@@ -1,0 +1,1 @@
+scotty --spa --source ./build --bucket shpred --force
