@@ -21,7 +21,7 @@ export default class AppHeader extends React.Component {
   }
   render() {
     return (
-      <div className="pa4 flex justify-between items-center">
+      <div className="flex-none bb b--light-gray pa4 flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img src={Octopus} alt="Octopus" className="h2 mr2" />
           <img src={Logo} alt="Shpred" className="h1" />

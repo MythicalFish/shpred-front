@@ -17,7 +17,7 @@ const Container = Page => {
   }
 
   const mapState = createStructuredSelector({
-    videos: selectors.selectVideos(),
+    gallery: selectors.selectGallery(),
     video: selectors.selectVideo(),
     selectedResolution: selectors.selectResolution()
   })

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default props => {
   return (
-    <div className="ph2 pv5 bt tc mid-gray">
+    <div className="flex-none ph2 pv5 bt tc mid-gray b--light-gray">
       Built by{' '}
       <a href="https://mythical.fish" target="_blank" rel="noopener noreferrer">
         Jake Broughton

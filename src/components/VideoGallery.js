@@ -1,8 +1,12 @@
 import React from 'react'
 import Thumbnail from './Thumbnail'
+import Loader from './Loader'
 
-const VideoGallery = ({ videos }) => {
-  if (!videos) return null
+const VideoGallery = ({ gallery }) => {
+  const { isLoading, items: videos } = gallery.toObject()
+  if (isLoading) {
+    return <Loader />
+  }
   return (
     <div className="row no-gutter">
       {videos.map(video => (

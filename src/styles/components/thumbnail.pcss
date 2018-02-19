@@ -1,14 +1,15 @@
 .thumbnail {
-  @extend .relative; 
+  @extend .relative;
   @extend .db;
   min-height: 100px;
   & .img {
     line-height: 0;
     & img {
-      @extend .w-100; 
+      @extend .w-100;
     }
   }
-  & .title, & .meta {
+  & .title,
+  & .meta {
     @extend .absolute;
     @extend .bg-black-60;
     @extend .white;
@@ -40,6 +41,6 @@
   }
   & .preview-shadow {
     @extend .overlay;
-    box-shadow: inset 0 0 30px rgba(0,0,0,0.6);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
   }
 }
