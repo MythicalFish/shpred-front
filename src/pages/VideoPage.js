@@ -29,7 +29,7 @@ class VideoPage extends Component {
     if (this.state.id !== id) {
       this.setState({ id })
       this.props.fetchVideo(id)
-      if (this.props.videos.size === 0) this.props.fetchVideos()
+      if (this.props.gallery.get('items').size === 0) this.props.fetchVideos()
     }
   }
   render() {
